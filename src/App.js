@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Header from "./components/Header";
+import Mainsec from "./components/Mainsec";
+// import Sidebar from "./components/sidePannel/Sidebar";
+import Products from "./pages/Products"
+import { Route, Routes } from "react-router-dom";
+import React, { useState } from 'react';
 
-function App() {
+
+
+function App(props) {
+  const [basket, setBasket] = useState([]);
+
+  const addProductToBasket = (product) => {
+    setBasket([...basket, product]);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header basket={basket} />
+        <Routes>
+        <Route path="/" element={<Mainsec />} />
+        <Route path="/Products" element={<Products addProductToBasket={addProductToBasket} />} />
+      </Routes>
+      <footer></footer>
     </div>
   );
 }

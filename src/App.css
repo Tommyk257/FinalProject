@@ -1,38 +1,184 @@
-.App {
+*{
+  margin:0;
+  
+}
+
+html{
+  height:100%;
+  
+}
+
+h3{
+  transform: scale(3);
+}
+
+/* header css */
+
+.header{
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background-color: white;
+}
+
+.header-nav-bar > img{
+  opacity: 100%;
+}
+
+.head-nav-bar{
+  height: 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.search-bar{
+  width: 400px;
+  height: 20%;
+  background-color: transparent;
+  border-radius: 10px;
+  border: 2px solid black;
+  transform: scale(1.2);
+  margin-left: 150px;
+}
+
+button {
+  margin: 5px;
+  padding: 15px;
+  cursor: pointer;
+  border-radius: 10px;
+  background: none;
+	color: black;
+  border-style: solid;
+	border-color: black 2px;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit; 
+}
+
+
+
+.page-nav{
+  background-color:white;
+  opacity: 50%;
+  display: flex;
+  justify-content:center;
+  
+}
+
+.page-nav, p {
+  padding: 10px;
+  font-size: larger;
+  
+}
+.page-nav > p:hover{
+  border-bottom: 1px white;
+  text-decoration: underline;
+}
+
+/* main css */
+
+.lastest-deal {
+  object-fit: contain;
+  
+}
+
+.main-deal-section{
+  height: 500px;
+  width: 100%;
+  margin-top: 100px;
+
+  display: flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.card-container{
+  display: flex;
+  justify-content:center;
+  gap:150px;
+  position: absolute; 
+  top: 72%; 
+  left:15%; 
+  transform: translateZ(50px);
+}
+
+.cards{
+  height:150px;
+  width:340px;
+  border-style: solid;
+  background-color: black;
+  border-color: black;
+  opacity: 50%;
+  position: relative;
+  z-index: 1;
+}
+
+.brand-page-link{
+  padding-top: 100px;
+  padding-left: 100px;
+}
+
+.brand-page-link-grid{
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 20%;
+  height: 150vh;
+  width: 175vh;
+  padding-top: 10px;
+}
+
+.brand-cards > p{
+  padding:0;
+}
+
+.brand-cards{
+  border: 1px solid black;
+  padding: 5px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* products page grid  */
+
+.products{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(10%, 1fr));
+  grid-auto-rows: minmax(0, 1fr);
+  padding-left: 150px;
+  gap: 10px;
+}
+.grid-element > li {
+    list-style: none;
+  padding: 5px;
+  
+}
+.products > ul {
+  text-align: center;
+  padding-left: 0;
+  
+}
+.product-description{
+  font-size: 12px;
+  
+}
+.grid-element img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+.product-name{
+  
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* basket  */
+
+.my-sliding-pane{
+  padding-top: 100px;
+  
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.product-list > li{
+  padding-top: 100px;
+  border: 1px solid black;
 }

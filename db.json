@@ -1,0 +1,126 @@
+{
+  "nike-products": [
+    {
+      "id": 1,
+      "product": "Nike Air Max 270",
+      "price": "£150",
+      "description": "Stylish and comfortable sneakers with a visible Air unit for enhanced cushioning.",
+      "stock": 50,
+      "image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/awjogtdnqxniqqk0wpgf/air-max-270-shoes-Kqzbp7.png"
+    },
+    {
+      "id": 2,
+      "product": "Nike Dri-FIT T-Shirt",
+      "price": "£30",
+      "description": "A lightweight, moisture-wicking t-shirt for active individuals.",
+      "stock": 100,
+      "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/kxjgqmbim9zxricso57p/dri-fit-fitness-t-shirt-rMXj0g.png"
+    },
+    {
+      "id": 3,
+      "product": "Nike Flex Training Shorts",
+      "price": "£40",
+      "description": "Flexible and breathable shorts for optimal movement during workouts.",
+      "stock": 75,
+      "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcR_mtosNcqCyyzQiVJHgUty9m5ldF8VMOhXcCZKXNM8LkEYqwdw5hmzY7422wNDEwMWXbhkhN2pNH6ZNgSDeVAb_AWm3WbW1IPaGbCqFJHHfzkCARu5l-FO7xYy1H-7ZABK_g&usqp=CAc"
+    },
+    {
+      "id": 4,
+      "product": "Nike Pro Compression Leggings",
+      "price": "£50",
+      "description": "Compression leggings designed to provide support and muscle recovery during intense workouts.",
+      "stock": 60,
+      "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQSjYtlnAr0cpZbY3eY3afTUcYzS08_K8QTvKLS5KuEhLEr0mXWYaCYPp8nnfPmUT5lhmA5vLNBZ2XXcqVWio1LkGCfa04IvzlUtqO1_Hj7yFX6d4BHkg-VrC1BuRj7W5ZWLND8&usqp=CAc"
+    },
+    {
+      "id": 5,
+      "product": "Nike Sportswear Windrunner Jacket",
+      "price": "£80",
+      "description": "A classic lightweight jacket with a stylish color-block design.",
+      "stock": 30,
+      "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQz3Mz5djo2_8ANPB9C9C2aD_zy7IevzsBFVqL7DwL_N9Bpi_oCJGx_TEbBpK6M1zU_v4O73f_N2SDIuyyTdfDT_3bBJH1IAg938l0KuKKbttrb-FbqRqy92Z23lNu16ZnbUw&usqp=CAc"
+    },
+    {
+      "id": 6,
+      "product": "Nike Air Zoom Pegasus 38",
+      "price": "£120",
+      "description": "Versatile running shoes with responsive cushioning and a durable outsole.",
+      "stock": 80,
+      "image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/e2ff01fa-7e97-4536-b4f8-a9f21992cba3/pegasus-38-road-running-shoes-5HVSDm.png"
+    },
+    {
+      "id": 7,
+      "product": "Nike Brasilia Backpack",
+      "price": "£50",
+      "description": "A spacious backpack with multiple compartments for convenient storage.",
+      "stock": 40,
+      "image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/41f945ed-d43b-455a-b2f6-3a2890d355c3/brasilia-9-5-training-backpack-fTRPXc.png"
+    },
+    {
+      "id": 8,
+      "product": "Nike Pro HyperWarm Hoodie",
+      "price": "£70",
+      "description": "A thermal hoodie designed to keep you warm during workouts.",
+      "stock": 90,
+      "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/07ac0a4d-34d2-4fe4-bf4f-b11ce823d012/pro-hyperwarm-hood-Hq284N.png"
+    },
+    {
+      "id": 9,
+      "product": "Nike Revolution 5 Running Shoes",
+      "price": "£65",
+      "description": "Lightweight and comfortable running shoes with a breathable upper.",
+      "stock": 55,
+      "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/xyworvn0y3axndxbpgim/revolution-5-older-road-running-shoes-btjbZH.png"
+    },
+    {
+      "id": 10,
+      "product": "Nike Elite Basketball",
+      "price": "£25",
+      "description": "A high-quality basketball with excellent grip and durability.",
+      "stock": 20,
+      "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/3d5d3fcc-0b10-4b0b-8ca5-688437e2dc45/elite-tournament-8p-basketball-c9Pn0R.png"
+    },
+    {
+      "id": 11,
+      "product": "Nike Gym Club Duffel Bag",
+      "price": "£55",
+      "description": "A spacious duffel bag with multiple pockets for gym essentials.",
+      "stock": 35,
+      "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/26d7b476-2887-4919-8afc-418c0af4b37e/gym-club-training-duffel-bag-btMWX7.png"
+    },
+    {
+      "id": 12,
+      "product": "Nike Pro Women's Training Tights",
+      "price": "£60",
+      "description": "Compression tights for women, offering support and comfort during workouts.",
+      "stock": 50,
+      "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/672b584b-49d8-4f4c-91eb-7a97f7182227/pro-365-13cm-shorts-7kWVSg.png"
+    },
+    {
+      "id": 13,
+      "product": "Nike Benassi JDI Slides",
+      "price": "£25",
+      "description": "Comfortable slides with a cushioned footbed, perfect for casual wear.",
+      "stock": 70,
+      "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/760d1c4a-c829-4fa0-b49a-11926d84757a/benassi-jdi-slides-Nx2m6m.png"
+    },
+    {
+      "id": 14,
+      "product": "Nike Dry-Fit Running Cap",
+      "price": "£25",
+      "description": "A lightweight cap with moisture-wicking technology for cool and dry comfort.",
+      "stock": 45,
+      "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/597261aa-5750-446b-abea-413b17816262/dri-fit-aerobill-running-visor-n9nrg4.png"
+    },
+    {
+      "id": 15,
+      "product": "Nike Legend Essential Training Shoes",
+      "price": "£80",
+      "description": "Versatile training shoes with a durable construction and supportive fit.",
+      "stock": 60,
+      "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/8d3a8b2c-318a-4a3d-baed-c8fa2132bf14/legend-essential-3-next-nature-training-shoes-T3H2Bg.png"
+    }
+  ]
+}
+
+  
