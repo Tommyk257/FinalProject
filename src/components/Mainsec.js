@@ -1,5 +1,5 @@
 import deal from  '../images/products-promotion.jpg';
-
+import React from 'react';
 
 
 function Main() {

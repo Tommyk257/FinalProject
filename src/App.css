@@ -166,18 +166,13 @@ button {
   max-height: 100%;
   object-fit: contain;
 }
-.product-name{
-  
-}
+
 
 /* basket  */
-
 .my-sliding-pane{
   padding-top: 100px;
   
 }
-
-
 .product-list > li{
   padding-top: 100px;
   border: 1px solid black;
