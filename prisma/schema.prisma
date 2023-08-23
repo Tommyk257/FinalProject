@@ -1,0 +1,57 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
+}
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id        Int    @id @default(autoincrement())
+  user_name String @unique
+  email     String
+  password  String
+  role      Role   @default(CUSTOMER)
+  cartId    Int?
+}
+
+model Product {
+  id                  Int        @id @default(autoincrement())
+  product_name        String
+  product_price       Int
+  product_description String
+  product_image       String
+  product_type        String
+  product_status      Boolean    @default(false)
+  carts               Cart[]
+  cartItems           CartItem[]
+}
+
+model Cart {
+  id        Int        @id @default(autoincrement())
+  createdAt DateTime   @default(now())
+  products  Product[]
+  cartItems CartItem[]
+}
+
+model CartItem {
+  cartId         Int
+  cart           Cart    @relation(fields: [cartId], references: [id])
+  productId      Int
+  product        Product @relation(fields: [productId], references: [id])
+  product_name   String
+  product_price  Int
+  product_image  String
+  product_type   String
+  product_status Boolean @default(false)
+
+  createdAt DateTime @default(now())
+
+  @@id([cartId, productId])
+}
+
+enum Role {
+  CUSTOMER
+  ADMIN
+}
