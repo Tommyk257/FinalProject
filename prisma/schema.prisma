@@ -1,10 +1,11 @@
-datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
-  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
-}
 generator client {
   provider = "prisma-client-js"
+}
+
+datasource db {
+  provider          = "postgresql"
+  url               = env("DATABASE_URL")
+  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
 }
 
 model User {
@@ -24,29 +25,28 @@ model Product {
   product_image       String
   product_type        String
   product_status      Boolean    @default(false)
-  carts               Cart[]
   cartItems           CartItem[]
+  carts               Cart[]     @relation("CartToProduct")
 }
 
 model Cart {
   id        Int        @id @default(autoincrement())
   createdAt DateTime   @default(now())
-  products  Product[]
   cartItems CartItem[]
+  products  Product[]  @relation("CartToProduct")
 }
 
 model CartItem {
   cartId         Int
-  cart           Cart    @relation(fields: [cartId], references: [id])
   productId      Int
-  product        Product @relation(fields: [productId], references: [id])
   product_name   String
   product_price  Int
   product_image  String
   product_type   String
-  product_status Boolean @default(false)
-
-  createdAt DateTime @default(now())
+  product_status Boolean  @default(false)
+  createdAt      DateTime @default(now())
+  cart           Cart     @relation(fields: [cartId], references: [id])
+  product        Product  @relation(fields: [productId], references: [id])
 
   @@id([cartId, productId])
 }
