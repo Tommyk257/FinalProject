@@ -1,12 +1,18 @@
-import logo from "../images/Logo.jpg";
-import Basket from "../components/Basket";
-import { Link } from "react-router-dom";
 import React, { useState } from "react";
+import { LogoSvg } from "../images/LogoSvg";
+import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
+import { searchIcon } from "../icons/search.js";
+import Basket from "../components/Basket";
 import SlidingPane from "react-sliding-pane";
 import "react-sliding-pane/dist/react-sliding-pane.css";
 
-function Header({basket}) {
+function Header({ basket }) {
   const [isPaneOpen, setIsPaneOpen] = useState(false);
+  const [searchValue, setSearchValue] = useState("");
+  const [isIconVisible, setIsIconVisible] = useState(true);
+
+  // bassket pannel
 
   const handlePaneOpen = () => {
     setIsPaneOpen(true);
@@ -16,15 +22,49 @@ function Header({basket}) {
     setIsPaneOpen(false);
   };
 
+  // search-bar
+
+  const handleSearchChange = (event) => {
+    setSearchValue(event.target.value);
+  };
+
+  const handleSearchFocus = () => {
+    setIsIconVisible(false);
+  };
+
+  const handleSearchBlur = () => {
+    setIsIconVisible(searchValue === "");
+    
+  };
+
   return (
     <>
+      <Helmet>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap"
+          rel="stylesheet"
+        />
+      </Helmet>
       <div className="header">
         <div className="head-nav-bar">
           <Link to="/">
-            <img src={logo} alt="logo" height={150} width={150} />
+            <LogoSvg />
           </Link>
           <form>
-            <input className="search-bar"></input>
+            <div className="search-bar-wrapper">
+            
+            <input
+              className="search-bar"
+              value={searchValue}
+              onChange={handleSearchChange}
+              onFocus={handleSearchFocus}
+              onBlur={handleSearchBlur}   
+              placeholder="What groceries are you looking for?"
+            ></input>
+             {isIconVisible && <span className="search-icon">{searchIcon()}</span>}
+            </div>
           </form>
 
           <div className="head-nav-bar-button">
@@ -41,7 +81,6 @@ function Header({basket}) {
             onRequestClose={handlePaneClose}
             width="700px"
           >
-           
             <Basket basket={basket} />
           </SlidingPane>
         </div>
@@ -50,10 +89,8 @@ function Header({basket}) {
           <Link to="/Products">
             <p>products</p>
           </Link>
-          <p>help</p>
-          <p>my dog needs help</p>
-          <p>please anyone</p>
-          <p>fuck it ill eat it</p>
+          <p>Offers/Promotions</p>
+          <p>Recipes</p>
         </div>
       </div>
     </>
