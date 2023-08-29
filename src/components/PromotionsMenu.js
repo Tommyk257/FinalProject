@@ -8,7 +8,7 @@ function DropdownMenu({ menuItems }) {
       <div className="dropdown-content">
         {menuItems.map((item, index) => (
           <Link key={index} to={item.link}>
-            {item.label}
+            <p>{item.label}</p>
           </Link>
         ))}
       </div>

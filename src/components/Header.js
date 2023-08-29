@@ -17,15 +17,15 @@ function Header({ basket }) {
   // droppDownMenu
 
   const productsMenuItems = [
-    { label: 'Category 1', link: '/category1' },
-    { label: 'Category 2', link: '/category2' },
-    { label: 'Category 3', link: '/category3' },
+    { label: 'Fruit/Veg', link: '/Vegs' },
+    { label: 'Meats',     link: '/Meats' },
+    { label: 'Dairy',     link: '/Dairies' },
   ];
 
   const promotionMenu = [
-    { label: 'Category 1', link: '/category1' },
-    { label: 'Category 2', link: '/category2' },
-    { label: 'Category 3', link: '/category3' },
+    { label: 'Offers', link: '/category1' },
+    { label: 'BBQ Special', link: '/category2' },
+    { label: 'Back to school', link: '/category3' },
   ];
 
   const recipesMenu = [

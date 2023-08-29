@@ -13,7 +13,7 @@ function PromotionsMenu({ menuItems }) {
       <div className="dropdown-content" style={productsStyle}>
         {menuItems.map((item, index) => (
           <Link key={index} to={item.link}>
-            {item.label}
+            <p>{item.label}</p>
           </Link>
         ))}
       </div>
