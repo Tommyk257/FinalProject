@@ -1,16 +1,39 @@
 import React, { useState } from "react";
-import { LogoSvg } from "../images/LogoSvg";
-import { Link } from "react-router-dom";
+import "react-sliding-pane/dist/react-sliding-pane.css";
 import { Helmet } from "react-helmet";
-import { searchIcon } from "../icons/search.js";
 import Basket from "../components/Basket";
 import SlidingPane from "react-sliding-pane";
-import "react-sliding-pane/dist/react-sliding-pane.css";
+import { basketIcon } from "../icons/basket.js";
+import Logo from "./Logo";
+import SearchBar from "./SearchBar";
+import DropdownMenu from './DropDownMenu.js';
+import PromotionsMenu from './PromotionsMenu.js';
+import RecipesMenu from './RecipesMenu.js';
 
 function Header({ basket }) {
   const [isPaneOpen, setIsPaneOpen] = useState(false);
   const [searchValue, setSearchValue] = useState("");
-  const [isIconVisible, setIsIconVisible] = useState(true);
+  console.log(searchValue, "search");
+  // droppDownMenu
+
+  const productsMenuItems = [
+    { label: 'Category 1', link: '/category1' },
+    { label: 'Category 2', link: '/category2' },
+    { label: 'Category 3', link: '/category3' },
+  ];
+
+  const promotionMenu = [
+    { label: 'Category 1', link: '/category1' },
+    { label: 'Category 2', link: '/category2' },
+    { label: 'Category 3', link: '/category3' },
+  ];
+
+  const recipesMenu = [
+    { label: 'Category 1', link: '/category1' },
+    { label: 'Category 2', link: '/category2' },
+    { label: 'Category 3', link: '/category3' },
+  ];
+
 
   // bassket pannel
 
@@ -24,17 +47,13 @@ function Header({ basket }) {
 
   // search-bar
 
-  const handleSearchChange = (event) => {
-    setSearchValue(event.target.value);
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log("Input value:", searchValue);
   };
 
-  const handleSearchFocus = () => {
-    setIsIconVisible(false);
-  };
-
-  const handleSearchBlur = () => {
-    setIsIconVisible(searchValue === "");
-    
+  const handleSearchChange = (value) => {
+    setSearchValue(value);
   };
 
   return (
@@ -49,28 +68,16 @@ function Header({ basket }) {
       </Helmet>
       <div className="header">
         <div className="head-nav-bar">
-          <Link to="/">
-            <LogoSvg />
-          </Link>
-          <form>
-            <div className="search-bar-wrapper">
-            
-            <input
-              className="search-bar"
-              value={searchValue}
-              onChange={handleSearchChange}
-              onFocus={handleSearchFocus}
-              onBlur={handleSearchBlur}   
-              placeholder="What groceries are you looking for?"
-            ></input>
-             {isIconVisible && <span className="search-icon">{searchIcon()}</span>}
-            </div>
-          </form>
+          <Logo />
+          <SearchBar
+            onSubmit={handleSubmit}
+            onSearchChange={handleSearchChange}
+          />
 
           <div className="head-nav-bar-button">
-            <button>My jumbo</button>
+            <button className="jumbo-button">My jumbo</button>
             <button onClick={handlePaneOpen} className="basket-button">
-              basket
+              {basketIcon()}
             </button>
           </div>
 
@@ -86,11 +93,9 @@ function Header({ basket }) {
         </div>
 
         <div className="page-nav">
-          <Link to="/Products">
-            <p>products</p>
-          </Link>
-          <p>Offers/Promotions</p>
-          <p>Recipes</p>
+          <DropdownMenu menuItems={productsMenuItems} />
+          <PromotionsMenu menuItems={promotionMenu} />
+          <RecipesMenu menuItems={recipesMenu} />
         </div>
       </div>
     </>
