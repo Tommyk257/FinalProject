@@ -1,9 +1,8 @@
-import React, { useEffect, useState,  } from "react";
-
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function Products({ addProductToBasket }) {
   const [products, setProducts] = useState([]);
-  
 
   useEffect(() => {
     fetch("http://localhost:4000/products")
@@ -11,44 +10,33 @@ function Products({ addProductToBasket }) {
       .then((data) => setProducts(data));
   }, []);
 
-  
-    const handleClick = () => {
-      console.log(products);
-    };
-
- 
   return (
     <>
-
-
-        <h1>Products</h1>
-        <button onClick={handleClick}>
-      Log products
-    </button>
-        <div className="products">
-          {products.map((product) => (
-            <ul>
-              <div className="grid-element">
+      <h1>Products</h1>
+      <div className="products">
+        {products.map((product) => (
+          <ul>
+            <div className="grid-element">
+              <Link to={`/product/${product.product_name}`}>
                 <img src={product.product_image} alt={product.name} />
-                <li className="product-name" key={product.id}>
-                  {product.product_name}
-                </li>
-                <li className="product-price" key={product.id}>
-                  {product.product_price}
-                </li>
-                <li className="product-description" key={product.id}>
-                  {product.product_description}
-                </li>
-                <div className="product-buttons">
-                  <button
-                    key={product.id}
-                    onClick={() => addProductToBasket(product)}
-                  ></button>
-                </div>
-              </div>
-            </ul>
-          ))}
-        </div>
+              </Link>
+              <li className="product-name" key={product.id}>
+                {product.product_name}
+              </li>
+              <li className="product-price" key={product.id}>
+                {product.product_price}
+              </li>
+              <li className="product-description" key={product.id}>
+                {product.product_description}
+              </li>
+                <button className="product-buttons"
+                  key={product.id}
+                  onClick={() => addProductToBasket(product)}
+                ></button>
+            </div>
+          </ul>
+        ))}
+      </div>
     </>
   );
 }

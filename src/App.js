@@ -1,6 +1,7 @@
 import "./App.css";
 import Header from "./components/Header";
 import Mainsec from "./components/Mainsec";
+import SingleProductCom from "./components/SingleProductCom";
 import Products from "./pages/Products"
 import VegProducts from "./pages/VegProducts"
 import MeatProducts from "./pages/MeatsProducts"
@@ -17,17 +18,20 @@ function App(props) {
   };
 
   return (
+    
     <div className="App">
       <Header basket={basket} />
         <Routes>
-        <Route path="/" element={<Mainsec />} />
-        <Route path="/Products" element={<Products addProductToBasket={addProductToBasket} />} />
-        <Route path="/Vegs" element={<VegProducts addProductToBasket={addProductToBasket} />} />
-        <Route path="/Meats" element={<MeatProducts addProductToBasket={addProductToBasket} />} />
-        <Route path="/Dairies" element={<DairyProducts addProductToBasket={addProductToBasket} />} />
-      </Routes>
+          <Route path="/" element={<Mainsec />} />
+          <Route path="/Products" element={<Products addProductToBasket={addProductToBasket} />} />
+          <Route path="/product/:productName" element={<SingleProductCom addProductToBasket={addProductToBasket} />}/>
+          <Route path="/Vegs" element={<VegProducts addProductToBasket={addProductToBasket} />} />
+          <Route path="/Meats" element={<MeatProducts addProductToBasket={addProductToBasket} />} />
+          <Route path="/Dairies" element={<DairyProducts addProductToBasket={addProductToBasket} />} />
+        </Routes>
       <footer></footer>
     </div>
+    
   );
 }
 

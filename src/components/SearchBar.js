@@ -1,14 +1,23 @@
 import React, { useState } from "react";
 import { searchIcon } from "../icons/search.js";
+import { useNavigate } from "react-router-dom";
 
-function SearchBar({ onSubmit, onSearchChange }) {
+export const MyContext = React.createContext();
+
+function SearchBar() {
+  const navigate = useNavigate();
   const [searchValue, setSearchValue] = useState("");
   const [isIconVisible, setIsIconVisible] = useState(true);
 
   const handleSearchChange = (event) => {
-    const newValue = event.target.value;
-    setSearchValue(newValue);
-    onSearchChange(newValue);
+    event.preventDefault();
+    if (searchValue.trim() !== "") {
+      const formattedValue =
+        searchValue.charAt(0).toUpperCase() + searchValue.slice(1);
+      setSearchValue(formattedValue);
+      navigate(`/product/${formattedValue}`);
+    }
+    console.log("formatted", setSearchValue());
   };
 
   const handleSearchFocus = () => {
@@ -20,15 +29,16 @@ function SearchBar({ onSubmit, onSearchChange }) {
   };
 
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={handleSearchChange}>
       <div className="search-bar-wrapper">
         <input
           className="search-bar"
-          value={searchValue}
-          onChange={handleSearchChange}
-          onFocus={handleSearchFocus}
-          onBlur={handleSearchBlur}   
+          type="text"
           placeholder="What groceries are you looking for?"
+          value={searchValue}
+          onChange={(e) => setSearchValue(e.target.value)}
+          onFocus={handleSearchFocus}
+          onBlur={handleSearchBlur}
         />
         {isIconVisible && <span className="search-icon">{searchIcon()}</span>}
       </div>

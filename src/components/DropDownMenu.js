@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 function PromotionsMenu({ menuItems }) {
   const productsStyle = {
-    marginLeft: '125px', // Apply your desired margin value
+    marginLeft: '125px', 
   };
   return (
     <div className="dropdown">

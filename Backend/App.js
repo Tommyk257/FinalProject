@@ -4,7 +4,7 @@ const app = express();
 const { Router } = require("express");
 
 const router = Router();
-app.use(cors({ origin: "http://localhost:3001" }));
+app.use(cors({ origin: "http://localhost:3000" }));
 
 const productsRouter = require("./routes/products");
 const fruitRouter = require("./routes/Fruits");
@@ -12,10 +12,9 @@ const meatRouter = require("./routes/Meats");
 const ProductByNameRouter = require("./routes/productByName");
 const DairyRouter = require("./routes/Dairys");
 
-app.use("/products", productsRouter);
+app.use("/products", productsRouter, ProductByNameRouter);
 app.use("/fruits", fruitRouter);
 app.use("/meats", meatRouter);
-app.use("/products", ProductByNameRouter);
 app.use("/dairys", DairyRouter);
 
 const PORT = 4000;

@@ -25,7 +25,7 @@ ProductByNameRouter.get('/:product_name', async (req, res) => {
                 error: 'Product not found',
             });
         }
-
+        res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
         res.status(200).json({
             status: 'success',
             data: product,
