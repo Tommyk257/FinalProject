@@ -42,7 +42,7 @@ html{
 
 .search-icon {
   position: absolute;
-  top: 44%;
+  top: 38%;
   left: 63%;
   scale: 2;
   transform: translateY(-50%);
@@ -142,15 +142,25 @@ html{
 
 .dropdown:hover .dropdown-content-products {
   display: block;
+  
 }
 
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f9f9f9;
+  background-color: white;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
+.dropdown-content > p {
+  border-bottom:2px solid #f8b90dde; ;
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
 
 .dropdown-content a {
   color: black;

@@ -19,8 +19,8 @@ model User {
 
 model Product {
   id                  Int        @id @default(autoincrement())
-  product_name        String
-  product_price       Int
+  product_name        String     @unique
+  product_price       Decimal
   product_description String
   product_image       String
   product_type        String

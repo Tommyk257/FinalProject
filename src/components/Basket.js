@@ -10,7 +10,7 @@ function Basket({ basket }) {
         <ul>
           {basket.map((item) => (
             <li key={item.id}>
-              <div>{item.product} {item.price}</div>
+              <div>{item.product_name} {item.product_price}</div>
             </li>
           ))}
         </ul>

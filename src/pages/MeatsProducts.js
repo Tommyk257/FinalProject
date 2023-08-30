@@ -4,31 +4,37 @@ import React, { useEffect, useState,  } from "react";
 function Products({ addProductToBasket }) {
   const [products, setProducts] = useState([]);
 
-  // useEffect(() => {
-  //   fetch()
-  //     .then((response) => response.json())
-  //     .then((data) => setProducts(data));
-  // }, []);
+  useEffect(() => {
+    fetch("http://localhost:4000/meats")
+      .then((response) => response.json())
+      .then((data) => setProducts(data));
+  }, []);
 
+  const handleClick = () => {
+    console.log(products);
+  };
  
   return (
     <>
    
 
-        <h1>Products</h1>
+        <h1>Meat Products</h1>
+        <button onClick={handleClick}>
+      Log products
+    </button>
         <div className="products">
           {products.map((product) => (
             <ul>
               <div className="grid-element">
-                <img src={product.image} alt={product.name} />
+                <img src={product.product_image} alt={product.name} />
                 <li className="product-name" key={product.id}>
-                  {product.product}
+                  {product.product_name}
                 </li>
                 <li className="product-price" key={product.id}>
-                  {product.price}
+                  {product.product_price}
                 </li>
                 <li className="product-description" key={product.id}>
-                  {product.description}
+                  {product.product_description}
                 </li>
                 <div className="product-buttons">
                   <button
