@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Sidebar from "./Sidebar";
+import { addIcon } from "../icons/add.js";
 
 function SingleProductCom({ addProductToBasket }) {
   const { productName } = useParams();
@@ -22,15 +24,25 @@ function SingleProductCom({ addProductToBasket }) {
   }
 
   return (
-    <div className="single_product_contianer">
-      <h1>{product.data.product_name}</h1>
-      <p>Price: {product.data.product_price}</p>
-      <p>Description: {product.data.product_description}</p>
-      <img src={product.data.product_image} alt={product.product_name} />
-      <button className="product-buttons"
-        key={product.data.id}
-        onClick={() => addProductToBasket(product.data)}
-      ></button>
+    <div>
+      <div className="single_product_contianer">
+        <img src={product.data.product_image} alt={product.product_name} />
+        <div className="single_product_info_grid">
+          <div className="single_product_info">
+            <h1>{product.data.product_name}</h1>
+            <p>{product.data.product_price}</p>
+            <p>{product.data.product_description}</p>
+            <div className="single_product_button">
+              <button
+                key={product.id}
+                onClick={() => addProductToBasket(product)}
+              >
+                <p>Add To Cart</p> {addIcon()}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
