@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Sidebar from "../components/Sidebar";
+import { addIcon } from "../icons/add.js";
 
 function Products({ addProductToBasket }) {
   const [products, setProducts] = useState([]);
@@ -10,39 +12,44 @@ function Products({ addProductToBasket }) {
       .then((data) => setProducts(data));
   }, []);
 
-  const handleClick = () => {
-    console.log(products);
-  };
-
   return (
     <>
-      <h1>1Veg Products</h1>
-      <button onClick={handleClick}>Log products</button>
-      <div className="products">
-        {products.map((product) => (
-          <ul>
-            <div className="grid-element">
-              <Link to={`/product/${product.product_name}`}>
-                <img src={product.product_image} alt={product.name} />
-              </Link>
-              <li className="product-name" key={product.id}>
-                {product.product_name}
-              </li>
-              <li className="product-price" key={product.id}>
-                {product.product_price}
-              </li>
-              <li className="product-description" key={product.id}>
-                {product.product_description}
-              </li>
-              <div className="product-buttons">
-                <button
-                  key={product.id}
-                  onClick={() => addProductToBasket(product)}
-                ></button>
-              </div>
-            </div>
-          </ul>
-        ))}
+      <div className="products-container">
+        <Sidebar />
+        <div className="grid-container">
+          <div className="pages-container">
+            <h1>Products</h1>
+ 
+          </div>
+          <div className="products-grid">
+            {products.map((product) => (
+              <ul>
+                <div className="grid-element">
+                  <span className="product-buttons">
+                    <button
+                      key={product.id}
+                      onClick={() => addProductToBasket(product)}
+                    >{addIcon()}</button>
+                  </span>
+                  <Link to={`/product/${product.product_name}`}>
+                    <img className="product-image" src={product.product_image} alt={product.name} />
+                  </Link>
+                  <li className="product-info" key={product.id}>
+                    <span className="product-name">{product.product_name}</span>
+                    <span className="product-price">
+                      £{product.product_price}
+                    </span>
+                  </li>
+                  <li className="product-info-2" key={product.id}>
+                    <span className="product-description" key={product.id}>
+                      {product.product_description}
+                    </span>
+                  </li>
+                </div>
+              </ul>
+            ))}
+          </div>
+        </div>
       </div>
     </>
   );
