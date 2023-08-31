@@ -19,37 +19,37 @@ function Main() {
       
       {/* brand links */}
       <div className="brand-page-link">
-        <h2>Pay the brands bitch</h2>
+        <h2></h2>
         <div className="brand-page-link-grid">
           <article className="brand-cards">
-            <image>Image</image>
-            <h2>Nike</h2>
-            <p>Products</p>
-            <p>Jumbo</p>
+            <image></image>
+            <h2></h2>
+            <p></p>
+            <p></p>
           </article>
           <article className="brand-cards">
-            <image>Image</image>
-            <h2>Other shoe</h2>
-            <p>Products</p>
-            <p>Jumbo</p>
+            <image></image>
+            <h2></h2>
+            <p></p>
+            <p></p>
           </article>
           <article className="brand-cards">
-            <image>Image</image>
-            <h2>That foot thingy</h2>
-            <p>Products</p>
-            <p>Jumbo</p>
+            <image></image>
+            <h2></h2>
+            <p></p>
+            <p></p>
           </article>
           <article className="brand-cards">
-            <image>Image</image>
-            <h2>Crocks</h2>
-            <p>Products</p>
-            <p>Jumbo</p>
+            <image></image>
+            <h2></h2>
+            <p></p>
+            <p></p>
           </article>
           <article className="brand-cards">
-            <image>Image</image>
-            <h2>Other rubber shoes</h2>
-            <p>Products</p>
-            <p>Jumbo</p>
+            <image></image>
+            <h2></h2>
+            <p></p>
+            <p></p>
           </article>
         </div>
       </div>
