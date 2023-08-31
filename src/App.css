@@ -1,10 +1,11 @@
 *{
+  
   margin:0;
   font-family: 'Inter', sans-serif;  
 }
 
 html{
-  height:100%;
+ height:100%;
 }
 
 /* header css */
@@ -25,19 +26,11 @@ html{
 }
 
 .search-bar{
-  /* width: 400px;
-  height: 20%;
-  background-color: transparent;
-  border-radius: 10px;
-  border: 2px solid black;
-  transform: scale(1.2); */
-  
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 16px;
   width: 500px;
-  
 }
 
 .search-icon {
@@ -55,16 +48,13 @@ html{
   cursor: pointer;
   border-radius: 50%;
   background-color:#f8b90dde;
-	color: black;
-  border-style: solid;
-  border: 1px solid black;
-	font: inherit;
+  border: 1px solid #f8b90dde;
+  font: inherit;
 	cursor: pointer;
-	outline: inherit; 
 }
 
 .basket-button:hover{
-  border: 1px solid #ccc;
+  background-color:  #f7c438de;
 }
 
 .jumbo-button{
@@ -235,21 +225,30 @@ html{
 
 /* products page grid  */
 
-.products{
+.products-grid{
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(10%, 1fr));
-  grid-auto-rows: minmax(0, 1fr);
-  padding-left: 150px;
-  gap: 10px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 5px;
+  padding-bottom: 100px;
 }
+
+.grid-container{
+  flex: 1;
+  padding-left: 10px;
+  padding-right: 20px;
+}
+
 .grid-element > li {
-    list-style: none;
-  padding: 5px;
+ list-style: none;
+padding: 5px;
   
 }
-.products > ul {
+.products-grid > ul {
   text-align: center;
+  flex: 1;
   padding-left: 0;
+  border: 1px solid lightgray;
+  border-radius: 5%;
   
 }
 .product-description{
@@ -257,18 +256,170 @@ html{
   
 }
 .grid-element img {
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 50%;
+  max-height: 50%;
   object-fit: contain;
 }
 
+.pages-container{
+  padding-top: 25px;
+  padding-bottom: 25px;
+  
+}
+
+.page-container > h1{
+  padding-bottom: 10px;
+
+}
+
+/* products */
+.product-description{
+
+}
+.product-name{
+  padding-right: 15px;
+}
+.product-buttons{
+  position: relative;
+  
+
+}
+.product-buttons > button{
+display: flex;
+height: 35px;
+width: 35px;
+border-radius: 50%;
+cursor: pointer;
+position: absolute;
+bottom: 1;
+right: 1;
+margin: 15px;
+border: 1px solid rgb(66, 156, 43);
+background-color: rgb(66, 156, 43);
+}
+
+
 
 /* basket  */
+
+.basket-price{
+ padding-right: 5px;  
+ padding-top: 10px;
+
+}
+
+.basket-name {
+  padding-right: 5px;  
+  padding-top: 10px;
+}
+ 
+
+.basket-item {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.basket-image {
+  width: 80px; /* Adjust the width as needed */
+  height: 80px; /* Adjust the height as needed */
+  margin-right: 10px;
+}
+
+.basket-details {
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
 .my-sliding-pane{
   padding-top: 100px;
   
 }
-.product-list > li{
-  padding-top: 100px;
+.product-list > ul > li{
+  list-style: none;
+  margin-top: 25px;
   border: 1px solid black;
+  border-radius: 20px;
+  padding: 15px;
+  
+
+}
+
+/* sidebar css */
+
+.side-pannel{
+  border: 1px solid lightgray;
+  border-top: 0px;
+  width: 20%;
+  height: 800px
+}
+
+.products-container{
+  display: flex;
+}
+
+
+/* icons */
+
+.add-icon{
+  color: transparent;
+}
+
+/* single product page */
+
+.single_product_contianer{
+  justify-content: center;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  border-bottom: 5px solid #f8b90dde;
+  margin: 100px;
+  margin-right: 20px;
+  width: 90%;
+  height:80%;
+  display: grid;
+  grid-template-columns: 500px 1fr;
+  gap: 250px;
+
+}
+.single_product_contianer > img{
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-left: 150px;
+
+}
+
+.single_product_info_grid {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+}
+.single_product_info > h1, p{
+  padding: 5px;
+  
+}
+.single_product_info > p{
+  font-size: larger;
+}
+
+.single_product_button > button{
+height: 35px;
+width: 250px;
+border-radius: 20px;
+cursor: pointer;
+position: absolute;
+display: flex;
+margin-top: 10px;
+justify-content: center; /* Center horizontally */
+align-items: center; /* Center vertically */
+border: 1px solid rgb(66, 156, 43);
+background-color: rgb(66, 156, 43);
+}
+
+.single_product_button > button p {
+  margin: 0;
+  color: white;
+}
+
+.single_product_button > button svg {
+  order: 1; 
 }
