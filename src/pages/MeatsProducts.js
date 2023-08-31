@@ -18,7 +18,7 @@ function Products({ addProductToBasket }) {
         <Sidebar />
         <div className="grid-container">
           <div className="pages-container">
-            <h1>Products</h1>
+            <h1>Meat Products</h1>
             <button
               className="go-back-button"
               onClick={() => window.history.back()}
@@ -31,7 +31,12 @@ function Products({ addProductToBasket }) {
               <ul>
                 <div className="grid-element">
                   <span className="product-buttons">
-
+                    <button
+                      key={product.id}
+                      onClick={() => addProductToBasket(product)}
+                    >
+                      {addIcon()}
+                    </button>
                   </span>
                   <Link to={`/product/${product.product_name}`}>
                     <img

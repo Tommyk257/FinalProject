@@ -1,6 +1,6 @@
 import "./App.css";
 import Header from "./components/Header";
-import Basket from "./components/Basket";
+// import ProductCategory from "./components/ProductCategory";
 import Mainsec from "./components/Mainsec";
 import SingleProductCom from "./components/SingleProductCom";
 import Products from "./pages/Products";
@@ -13,12 +13,10 @@ import { Helmet } from "react-helmet";
 
 function App() {
   const [basket, setBasket] = useState([]);
-  
 
   const addProductToBasket = (product) => {
     setBasket([...basket, product]);
   };
-
 
   return (
     <div className="App">
@@ -42,15 +40,15 @@ function App() {
           element={<SingleProductCom addProductToBasket={addProductToBasket} />}
         />
         <Route
-          path="/Vegs"
+          path="/fruits"
           element={<VegProducts addProductToBasket={addProductToBasket} />}
         />
         <Route
-          path="/Meats"
+          path="/meats"
           element={<MeatProducts addProductToBasket={addProductToBasket} />}
         />
         <Route
-          path="/Dairies"
+          path="/dairy"
           element={<DairyProducts addProductToBasket={addProductToBasket} />}
         />
       </Routes>

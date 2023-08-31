@@ -17,13 +17,13 @@ function Header({ basket }) {
   // droppDownMenu
 
   const productsMenuItems = [
-    { label: "Fruit/Veg", link: "/Vegs" },
-    { label: "Meats", link: "/Meats" },
-    { label: "Dairy", link: "/Dairies" },
+    { label: "Fruit/Veg", link: "/fruits" },
+    { label: "Meats", link: "/meats" },
+    { label: "Dairy", link: "/dairy" },
   ];
 
   const promotionMenu = [
-    { label: "Offers", link: "/category1" },
+    { label: "Offers", link: "/Offers" },
     { label: "BBQ Special", link: "/category2" },
     { label: "Back to school", link: "/category3" },
   ];

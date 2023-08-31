@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 function PromotionsMenu({ menuItems }) {
+  
   const productsStyle = {
     marginLeft: '125px', 
   };

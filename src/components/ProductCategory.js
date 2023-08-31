@@ -1,17 +1,28 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import Sidebar from "../components/Sidebar";
+import { Link, useParams } from "react-router-dom";
+import Sidebar from "./Sidebar";
 import { addIcon } from "../icons/add.js";
-// import ProductCategory from "../components/ProductCategory";
 
-function VegProducts({ addProductToBasket }) {
+function ProductCategory({ addProductToBasket }) {
   const [products, setProducts] = useState([]);
+  const { category } = useParams();
+
+  const log = () => {
+    console.log(products, 'Clicked');
+  };
+  
 
   useEffect(() => {
-    fetch("http://localhost:4000/Fruits")
+    fetch(`http://localhost:4000/${category}`)
       .then((response) => response.json())
-      .then((data) => setProducts(data));
-  }, []);
+      .then((data) => {
+        setProducts(data);
+        console.log("data", data);
+      })
+      .catch((error) => {
+        console.error("Fetch error:", error);
+      });
+  }, [category]);
 
   return (
     <>
@@ -19,7 +30,14 @@ function VegProducts({ addProductToBasket }) {
         <Sidebar />
         <div className="grid-container">
           <div className="pages-container">
-            <h1>Products</h1>
+            <h1>1 Products</h1>
+            <button onClick={log}></button>
+            <button
+              className="go-back-button"
+              onClick={() => window.history.back()}
+            >
+              Go back
+            </button>
           </div>
           <div className="products-grid">
             {products.map((product) => (
@@ -61,4 +79,4 @@ function VegProducts({ addProductToBasket }) {
   );
 }
 
-export default VegProducts;
+export default ProductCategory;

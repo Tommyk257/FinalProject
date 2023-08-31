@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Sidebar from "./Sidebar";
 import { addIcon } from "../icons/add.js";
 
 function SingleProductCom({ addProductToBasket }) {
@@ -9,18 +8,29 @@ function SingleProductCom({ addProductToBasket }) {
 
   useEffect(() => {
     fetch(`http://localhost:4000/products/${productName}`)
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Product not found");
+        }
+        return response.json();
+      })
       .then((data) => {
         setProduct(data);
         console.log("data", data);
       })
       .catch((error) => {
         console.error("Fetch error:", error);
+        setProduct(null); // Set product to null in case of error
       });
   }, [productName]);
 
   if (!product) {
-    return <div>Sorry product unavailable...</div>;
+    return (
+      <div className="noProduct-error">
+        <p>Sorry, the product is unavailable...</p>
+        <button></button>
+      </div>
+    );
   }
 
   return (
